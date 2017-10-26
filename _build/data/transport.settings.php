@@ -2,8 +2,7 @@
 
 $settings = array();
 
-$tmp = array(
-	/*'some_setting' => array(
+$tmp = array(/*'some_setting' => array(
 		'xtype' => 'combo-boolean',
 		'value' => true,
 		'area' => 'sendex_main',
@@ -11,16 +10,16 @@ $tmp = array(
 );
 
 foreach ($tmp as $k => $v) {
-	/* @var modSystemSetting $setting */
-	$setting = $modx->newObject('modSystemSetting');
-	$setting->fromArray(array_merge(
-		array(
-			'key' => 'sendex_'.$k,
-			'namespace' => PKG_NAME_LOWER,
-		), $v
-	),'',true,true);
+    /* @var modSystemSetting $setting */
+    $setting = $modx->newObject('modSystemSetting');
+    $setting->fromArray(array_merge(
+        array(
+            'key' => 'sendex_' . $k,
+            'namespace' => PKG_NAME_LOWER,
+        ), $v
+    ), '', true, true);
 
-	$settings[] = $setting;
+    $settings[] = $setting;
 }
 
 unset($tmp);
